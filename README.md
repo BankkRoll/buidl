@@ -2,7 +2,7 @@
 
 `buidl` is a Web3 component library built using [TailwindCSS](https://tailwindcss.com/) and [Radix](https://www.radix-ui.com/) for the TurboETH Web3 Build System. 
 
-![image](/preview.jpeg)
+![preview](https://github.com/turbo-eth/buidl/assets/3408362/a0389c9d-6826-47e4-9278-77a69962e1b7)
 
 https://www.figma.com/file/F65o6koQzFYLNn4tWIk0dn/BUIDL-Core?type=design&node-id=0%3A1&t=Ov3Y7ps7bc9ZxqJJ-1
 
