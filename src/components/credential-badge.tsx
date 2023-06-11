@@ -17,7 +17,7 @@ import * as React from "react";
 
 type Props = React.HTMLAttributes<HTMLElement> & {
 	credential: VerifableCredential;
-	img: React.ReactElement;
+	img?: React.ReactElement;
 };
 
 export const CredentialBadge = ({

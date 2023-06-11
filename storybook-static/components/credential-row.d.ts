@@ -3,5 +3,5 @@ import * as React from "react";
 type Props = React.HTMLAttributes<HTMLElement> & {
     credential: VerifableCredential;
 };
-export declare const CredentialCard: ({ className, credential }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const CredentialRow: ({ className, credential }: Props) => import("react/jsx-runtime").JSX.Element;
 export {};
