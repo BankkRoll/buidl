@@ -27,7 +27,7 @@
 		"size": "size-limit",
 		"preview": "vite preview",
 		"storybook:dev": "storybook dev -p 6006",
-		"storybook:build": "storybook build"
+		"storybook:build": "tsc && vite build ; storybook build"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "npm run format"
