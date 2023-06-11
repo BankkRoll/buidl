@@ -6,7 +6,10 @@
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
 	"typings": "dist/index.d.ts",
-	"files": ["dist", "src"],
+	"files": [
+		"dist",
+		"src"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -75,9 +78,13 @@
 	},
 	"dependencies": {
 		"@radix-ui/react-dialog": "^1.0.4",
+		"@radix-ui/react-scroll-area": "^1.0.4",
+		"@radix-ui/react-tooltip": "^1.0.6",
+		"@types/luxon": "^3.3.0",
 		"class-variance-authority": "^0.6.0",
 		"clsx": "^1.2.1",
 		"lucide-react": "^0.241.0",
+		"luxon": "^3.3.0",
 		"simple-git-hooks": "^2.8.1",
 		"tailwind-merge": "^1.13.1",
 		"tailwindcss-animate": "^1.0.6",

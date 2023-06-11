@@ -1,5 +1,9 @@
 "use client";
+import { splitAndTruncateDID } from "../lib/truncate-did";
 import "../styles.css";
+import { VerifableCredential } from "../types/verifiable-credential";
+import { Tag } from "./shared/tag";
+import { TimeFromUtc } from "./shared/time-from-utc";
 import {
 	Dialog,
 	DialogContent,
@@ -8,7 +12,6 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "./ui/dialog";
-import { VerifableCredential } from "@/types/verifiable-credential";
 import classNames from "clsx";
 import * as React from "react";
 
@@ -43,8 +46,8 @@ export const CredentialCard = ({ className, credential }: Props) => {
 	const classes = classNames(
 		className,
 		"CredentialCard",
-		"flex flex-col justify-between",
-		"border-2 border-neutral-200 rounded-lg overflow-hidden",
+		"flex flex-col justify-between max-w-xl",
+		"bg-white border-2 border-neutral-200 rounded-lg overflow-hidden",
 	);
 	return (
 		<div className={classes}>
@@ -55,10 +58,7 @@ export const CredentialCard = ({ className, credential }: Props) => {
 				<div className="col-span-1 flex justify-end items-center">
 					<Dialog>
 						<DialogTrigger>
-							{" "}
-							<span className="bg-black text-white text-sm rounded-full p-2 px-4 inline-flex items-center justify-center">
-								Details
-							</span>
+							<Tag>Details</Tag>
 						</DialogTrigger>
 						<DialogContent>
 							<DialogHeader>
@@ -96,21 +96,22 @@ export const CredentialCard = ({ className, credential }: Props) => {
 				<p className="text-sm lg:text-base text-neutral-500">
 					{credentialDetails?.description}
 				</p>
+				<span className="text-xs text-neutral-700 font-black mt-2">
+					Issued on{" "}
+					<TimeFromUtc type="DATETIME" date={credential.issuanceDate} />
+				</span>
 			</div>
-			<div className="grid grid-cols-2 bg-neutral-100 p-4">
+			<div className="grid grid-cols-2 gap-x-3 bg-neutral-100 p-4">
 				<div className="col-span-1 flex flex-col gap-y-2">
 					<span className="block break-all text-xs">
 						<span className="font-bold">Recipient</span> <br />{" "}
-						{credential.credentialSubject.id}
-					</span>
-					<span className="block break-all text-xs">
-						<span className="font-bold">Issuer</span> <br />{" "}
-						{credential.issuer.id}
+						{splitAndTruncateDID(credential.credentialSubject.id)}
 					</span>
 				</div>
 				<div className="col-span-1 flex justify-end items-center">
-					<span className="bg-blue-500 text-white text-xs p-2 rounded-lg">
-						Authenticate
+					<span className="block break-all text-xs">
+						<span className="font-bold">Issuer</span> <br />{" "}
+						{splitAndTruncateDID(credential.issuer.id)}
 					</span>
 				</div>
 			</div>

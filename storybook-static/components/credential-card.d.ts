@@ -1,4 +1,4 @@
-import { VerifableCredential } from "@/types/verifiable-credential";
+import { VerifableCredential } from "../types/verifiable-credential";
 import * as React from "react";
 type Props = React.HTMLAttributes<HTMLElement> & {
     credential: VerifableCredential;

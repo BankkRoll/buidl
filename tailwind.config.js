@@ -13,6 +13,9 @@ module.exports = {
 			},
 		},
 		extend: {
+			fontSize: {
+				"2xs": ".65rem",
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -49,9 +52,7 @@ module.exports = {
 				},
 			},
 			borderRadius: {
-				lg: `var(--radius)`,
-				md: `calc(var(--radius) - 2px)`,
-				sm: "calc(var(--radius) - 4px)",
+				"4xl": "38px",
 			},
 			fontFamily: {
 				sans: ["var(--font-sans)", ...fontFamily.sans],
