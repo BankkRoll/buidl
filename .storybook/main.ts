@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import path from "path";
 const config: StorybookConfig = {
 	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
 	addons: [
@@ -20,6 +21,30 @@ const config: StorybookConfig = {
 	},
 	docs: {
 		autodocs: true,
+	},
+	async viteFinal(config, { configType }) {
+		return {
+			...config,
+			define: {
+				"process.env.NODE_DEBUG": false,
+			},
+			resolve: {
+				alias: [
+					{
+						find: "@",
+						replacement: path.resolve(__dirname, "./src"),
+					},
+					{
+						find: "@assets",
+						replacement: path.resolve(__dirname, "./src/assets"),
+					},
+					{
+						find: "@components",
+						replacement: path.resolve(__dirname, "./src/components"),
+					},
+				],
+			},
+		};
 	},
 };
 export default config;
