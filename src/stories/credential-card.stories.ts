@@ -3,20 +3,18 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { CredentialCard } from "../components/credential-card";
 import "../styles.css";
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-	title: "Example/CredentialCard",
+	title: "Credential/CredentialCard",
 	component: CredentialCard,
 	tags: ["autodocs"],
 	argTypes: {
-		credential: { control: "object" },
+		credential: { control: "array" },
 	},
 } satisfies Meta<typeof CredentialCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
 	args: {
 		credential: {
@@ -39,9 +37,3 @@ export const Primary: Story = {
 		},
 	},
 };
-
-// export const Secondary: Story = {
-// 	args: {
-// 		label: "CredentialCard",
-// 	},
-// };

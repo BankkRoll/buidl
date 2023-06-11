@@ -1,6 +1,7 @@
 "use client";
+import { splitAndTruncateDID } from "../lib/truncate-did";
 import "../styles.css";
-import { Button } from "./shared/button";
+import { VerifableCredential } from "../types/verifiable-credential";
 import { Tag } from "./shared/tag";
 import { TimeFromUtc } from "./shared/time-from-utc";
 import {
@@ -11,7 +12,6 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "./ui/dialog";
-import { VerifableCredential } from "@/types/verifiable-credential";
 import classNames from "clsx";
 import * as React from "react";
 
@@ -46,7 +46,7 @@ export const CredentialCard = ({ className, credential }: Props) => {
 	const classes = classNames(
 		className,
 		"CredentialCard",
-		"flex flex-col justify-between",
+		"flex flex-col justify-between max-w-xl",
 		"bg-white border-2 border-neutral-200 rounded-lg overflow-hidden",
 	);
 	return (
@@ -101,19 +101,18 @@ export const CredentialCard = ({ className, credential }: Props) => {
 					<TimeFromUtc type="DATETIME" date={credential.issuanceDate} />
 				</span>
 			</div>
-			<div className="grid grid-cols-2 bg-neutral-100 p-4">
+			<div className="grid grid-cols-2 gap-x-3 bg-neutral-100 p-4">
 				<div className="col-span-1 flex flex-col gap-y-2">
 					<span className="block break-all text-xs">
 						<span className="font-bold">Recipient</span> <br />{" "}
-						{credential.credentialSubject.id}
-					</span>
-					<span className="block break-all text-xs">
-						<span className="font-bold">Issuer</span> <br />{" "}
-						{credential.issuer.id}
+						{splitAndTruncateDID(credential.credentialSubject.id)}
 					</span>
 				</div>
 				<div className="col-span-1 flex justify-end items-center">
-					<Button size="sm">Authenticate</Button>
+					<span className="block break-all text-xs">
+						<span className="font-bold">Issuer</span> <br />{" "}
+						{splitAndTruncateDID(credential.issuer.id)}
+					</span>
 				</div>
 			</div>
 		</div>

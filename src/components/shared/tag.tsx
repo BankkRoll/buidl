@@ -3,7 +3,13 @@ import classNames from "clsx";
 import * as React from "react";
 
 const tag = cva(
-	["flex", "justify-center items-center", "font-bold", "rounded-full"],
+	[
+		"flex",
+		"justify-center items-center",
+		"font-bold",
+		"rounded-full",
+		"inline-block",
+	],
 	{
 		variants: {
 			intent: {
