@@ -27,10 +27,8 @@ export const CredentialCard = ({ className, credential }: Props) => {
 	React.useEffect(() => {
 		if (credential) {
 			(async () => {
-				console.log(credential, "credential");
 				const schema = await fetch(credential.credentialSchema.id);
 				const schemaJson = await schema.json();
-				console.log(schemaJson, "schemaJson");
 				setCredentialDetails({
 					id: schemaJson.$id,
 					title: schemaJson.title,
