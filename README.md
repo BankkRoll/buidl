@@ -4,7 +4,20 @@
 
 ![preview](https://github.com/turbo-eth/buidl/assets/3408362/a0389c9d-6826-47e4-9278-77a69962e1b7)
 
-https://www.figma.com/file/F65o6koQzFYLNn4tWIk0dn/BUIDL-Core?type=design&node-id=0%3A1&t=Ov3Y7ps7bc9ZxqJJ-1
+[![Figma Design](https://img.shields.io/badge/Figma-Design-blue?logo=figma&style=for-the-badge)](https://www.figma.com/file/F65o6koQzFYLNn4tWIk0dn/BUIDL-Core?type=design&node-id=0%3A1&t=Ov3Y7ps7bc9ZxqJJ-1)
+
+## Table of Contents
+- [BUIDL - Web3 Design System](#buidl---web3-design-system)
+- [Why](#why)
+- [Backlog V0](#backlog-v0)
+- [Developer Experience](#developer-experience)
+  - [Commands](#commands)
+  - [Configuration](#configuration)
+  - [Setup Files](#setup-files)
+  - [Continuous Integration](#continuous-integration)
+  - [Optimizations](#optimizations)
+  - [Module Formats](#module-formats)
+
 
 ## Why
 
